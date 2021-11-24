@@ -2,12 +2,12 @@ package com.vapsi.app.demo.movies.dto;
 
 import java.util.Objects;
 
-public class Movies {
+public class Movie {
     private String name;
     private String actorName;
     private String directorName;
 
-    public Movies(String name, String actorName, String directorName) {
+    public Movie(String name, String actorName, String directorName) {
         this.name = name;
         this.actorName = actorName;
         this.directorName = directorName;
@@ -16,8 +16,8 @@ public class Movies {
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
-        if (!(o instanceof Movies)) return false;
-        Movies movies = (Movies) o;
+        if (!(o instanceof Movie)) return false;
+        Movie movies = (Movie) o;
         return Objects.equals(name, movies.name) && Objects.equals(actorName, movies.actorName) && Objects.equals(directorName, movies.directorName);
     }
 

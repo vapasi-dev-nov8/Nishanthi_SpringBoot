@@ -1,6 +1,6 @@
 package com.vapsi.app.demo.movies.controller;
 
-import com.vapsi.app.demo.movies.dto.Movies;
+import com.vapsi.app.demo.movies.dto.Movie;
 import com.vapsi.app.demo.movies.service.MoviesService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -22,8 +22,8 @@ public class MoviesController {
     }
 
     @GetMapping("/")
-    public ResponseEntity<List<Movies>> getMovies(){
-        List<Movies> allMovies = moviesService.getAllMovies();
+    public ResponseEntity<List<Movie>> getMovies(){
+        List<Movie> allMovies = moviesService.getAllMovies();
         return ResponseEntity.ok().body(allMovies);
     }
 }

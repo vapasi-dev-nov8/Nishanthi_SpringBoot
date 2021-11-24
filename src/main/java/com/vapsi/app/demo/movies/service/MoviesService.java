@@ -1,6 +1,6 @@
 package com.vapsi.app.demo.movies.service;
 
-import com.vapsi.app.demo.movies.dto.Movies;
+import com.vapsi.app.demo.movies.dto.Movie;
 import com.vapsi.app.demo.movies.repository.MoviesRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -16,7 +16,7 @@ public class MoviesService {
         this.moviesRepository = moviesRepository;
     }
 
-    public List<Movies> getAllMovies(){
+    public List<Movie> getAllMovies(){
         return moviesRepository.getAllMovies();
     }
 
