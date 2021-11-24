@@ -35,10 +35,10 @@ class MoviesServiceTest {
     @Test
     public void getAllMoviesAddedToList(){
         List<Movie> allMovies = new ArrayList<>();
-        allMovies.add(new Movie("pirates of caribbean", "Johny Depp", "Gore Verbinsky"));
-        allMovies.add(new Movie("The Fight club", "Brad pitt", "David Fincher"));
-        allMovies.add(new Movie("Interstellar", "Mathew McConaughey", "Christopher Nolan"));
-        allMovies.add(new Movie("pulp fiction", "Samuel L Johnson", "Quintine torentino"));
+        allMovies.add(new Movie(101, "pirates of caribbean", "Johny Depp", "Gore Verbinsky"));
+        allMovies.add(new Movie(102, "The Fight club", "Brad pitt", "David Fincher"));
+        allMovies.add(new Movie(103, "Interstellar", "Mathew McConaughey", "Christopher Nolan"));
+        allMovies.add(new Movie(104, "pulp fiction", "Samuel L Johnson", "Quintine torentino"));
         when(moviesRepository.getAllMovies()).thenReturn(allMovies);
         List<Movie> totalMovies = moviesService.getAllMovies();
         verify(moviesRepository, times(1)).getAllMovies();

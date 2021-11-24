@@ -3,18 +3,18 @@ package com.vapsi.app.demo.movies.repository;
 import com.vapsi.app.demo.movies.dto.Movie;
 import org.springframework.stereotype.Repository;
 
-import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 @Repository
 public class MoviesRepository {
 
-    List<Movie> allMovies = new ArrayList<>();
+    List<Movie> allMovies = Arrays.asList(new Movie(101, "pirates of caribbean", "Johny Depp", "Gore Verbinsky"),
+            new Movie(102, "The Fight club", "Brad pitt", "David Fincher"),
+            new Movie(103, "Interstellar", "Mathew McConaughey", "Christopher Nolan"),
+            new Movie(104, "pulp fiction", "Samuel L Johnson", "Quintine torentino"));
+
     public List<Movie> getAllMovies() {
-        allMovies.add(new Movie("pirates of caribbean", "Johny Depp", "Gore Verbinsky"));
-        allMovies.add(new Movie("The Fight club", "Brad pitt", "David Fincher"));
-        allMovies.add(new Movie("Interstellar", "Mathew McConaughey", "Christopher Nolan"));
-        allMovies.add(new Movie("pulp fiction", "Samuel L Johnson", "Quintine torentino"));
         return allMovies;
     }
 }
