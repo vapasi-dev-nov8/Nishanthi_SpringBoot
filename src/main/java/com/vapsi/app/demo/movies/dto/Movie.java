@@ -3,12 +3,15 @@ package com.vapsi.app.demo.movies.dto;
 import java.util.Objects;
 
 public class Movie {
-    private int id;
+    private Integer id;
     private String name;
     private String actorName;
     private String directorName;
 
-    public Movie(int id, String name, String actorName, String directorName) {
+    public Movie() {
+    }
+
+    public Movie(Integer id, String name, String actorName, String directorName) {
         this.id = id;
         this.name = name;
         this.actorName = actorName;
@@ -28,7 +31,7 @@ public class Movie {
         return Objects.hash(id, name, actorName, directorName);
     }
 
-    public int getId() {
+    public Integer getId() {
         return id;
     }
 

@@ -3,6 +3,7 @@ package com.vapsi.app.demo.movies.controller;
 import com.vapsi.app.demo.movies.dto.Movie;
 import com.vapsi.app.demo.movies.service.MoviesService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -20,8 +21,14 @@ public class MoviesController {
     }
 
     @GetMapping("/")
-    public ResponseEntity<List<Movie>> getMovies(){
+    public ResponseEntity<List<Movie>> getMovies() {
         List<Movie> allMovies = moviesService.getAllMovies();
         return ResponseEntity.ok().body(allMovies);
+    }
+
+    @PostMapping("/")
+    public ResponseEntity<Movie> saveMovie(@RequestBody Movie movie) {
+        Movie movieWithId = moviesService.saveMovie(movie);
+        return new ResponseEntity<Movie>(movieWithId, HttpStatus.CREATED);
     }
 }
